@@ -1,14 +1,15 @@
-import busio
-import json
+
+import busio #sudo apt-get update THEN sudo apt-get upgrade THEN  sudo apt-get install python3-pip AND sudo pip3 install --upgrade setuptools
+import json #sudo apt install libjson-c-dev
 import board
-import adafruit_tsl2561
+import adafruit_tsl2561 #sudo pip3 install adafruit-circuitpython-tsl2561
 import time
-import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO #sudo apt-get install rpi.gpio
 import datetime
 import random
-from w1thermsensor import W1ThermSensor
-from paho.mqtt import client as mqtt_client
-from configparser import ConfigParser
+from w1thermsensor import W1ThermSensor #sudo apt-get install python3-w1thermsensor
+from paho.mqtt import client as mqtt_client #pip install paho-mqtt
+from configparser import ConfigParser #pip install configparser
 sensor = W1ThermSensor()
 i2c = busio.I2C(board.SCL, board.SDA)
 tsl = adafruit_tsl2561.TSL2561(i2c)
