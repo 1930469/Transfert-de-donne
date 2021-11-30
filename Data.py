@@ -37,9 +37,6 @@ sensorIdMouv = capteurinfo["sensorIdMouv"]
 cannalTemp = "local/"+ZoneId+"/"+TransmitterId+"/"+sensorIdTemp+"/temperature"
 cannalLum = "local/"+ZoneId+"/"+TransmitterId+"/"+sensorIdLum+"/luminosite"
 cannalMouv = "local/"+ZoneId+"/"+TransmitterId+"/"+sensorIdMouv+"/mouvement"
-
- 
-
 def connect_mqtt():
         def on_connect(client, userdata, flags, rc):
                 if rc == 0:
@@ -52,9 +49,6 @@ def connect_mqtt():
         client.connect(broker, port)
         print("Test 1: Reussi")
         return client
-
- 
-
 def publish(client):
         while True:
                 d = datetime.datetime.now()
@@ -79,16 +73,12 @@ def publish(client):
                 result1 = client.publish(cannalTemp,hot)
                 result2 = client.publish(cannalMouv,mouv)
                 result3 = client.publish(cannalLum,lum)
-
- 
-
 def run():
         print("run")
         client = connect_mqtt()
         client.loop_start()
         publish(client)
 
- 
-
 if __name__ == "__main__":
         run()
+
