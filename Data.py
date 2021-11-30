@@ -8,8 +8,8 @@ import RPi.GPIO as GPIO #sudo apt-get install rpi.gpio
 import datetime
 import random
 from w1thermsensor import W1ThermSensor #sudo apt-get install python3-w1thermsensor
-from paho.mqtt import client as mqtt_client #pip install paho-mqtt
-from configparser import ConfigParser #pip install configparser
+from paho.mqtt import client as mqtt_client #sudo pip3 install paho-mqtt
+from configparser import ConfigParser #sudo pip3 install configparser
 sensor = W1ThermSensor()
 i2c = busio.I2C(board.SCL, board.SDA)
 tsl = adafruit_tsl2561.TSL2561(i2c)
